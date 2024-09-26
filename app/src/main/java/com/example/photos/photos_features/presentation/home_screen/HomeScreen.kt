@@ -20,29 +20,30 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.example.photos.photos_features.presentation.core.PhotoList
+import com.example.photos.photos_features.presentation.core.PhotosBottomBar
+import com.example.photos.photos_features.presentation.core.PhotosList
 import com.example.photos.photos_features.utils.Screens
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun HomeScreen(
     navController: NavController,
-    homeViewModel: HomeViewModel = viewModel()
+    homeViewModel: HomeViewModel = hiltViewModel()
 ) {
     //Collects PagingData and converts it to LazyPagingItems
     val photo = homeViewModel.getAllPhotos.collectAsLazyPagingItems()
     Scaffold(
         bottomBar = {
-            HomeBottomAppBar(
+            PhotosBottomBar(
                 onHomeClicked = { navController.navigate(Screens.Home.route) },
                 onSearchClicked = { navController.navigate(Screens.Search.route) }
             )
         },
         content = {
-            PhotoList(photos = photo)
+            PhotosList(photos = photo)
         }
     )
 }

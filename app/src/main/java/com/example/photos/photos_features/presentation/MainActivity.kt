@@ -11,7 +11,14 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.photos.photos_features.presentation.home_screen.HomeScreen
+import com.example.photos.photos_features.presentation.search_screen.SearchScreen
+import com.example.photos.photos_features.utils.Screens
 import com.example.photos.ui.theme.PhotosTheme
+import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 //Will contain all the screens and components in which

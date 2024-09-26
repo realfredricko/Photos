@@ -12,12 +12,12 @@ import kotlinx.serialization.Serializable
 @Entity(tableName = PHOTOS_TABLE)
 data class Photo(
     @PrimaryKey(autoGenerate = false)
-    @Embedded
     val id:String,
-    val urls:PhotosUrls,
+    val description:String?,
+    val alternateDescription:String?,
     val color:String,
     @Contextual
+    @Embedded
     val user:PhotosCreator,
-    val description:String?,
-    val alternateDescription:String?
+    val urls:PhotosUrls,
 )

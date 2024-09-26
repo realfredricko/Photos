@@ -21,7 +21,7 @@ object NetworkModule {
     //Provide instance of Retrofit dependencies
     @Provides
     @Singleton
-    private fun createHttpClient(): OkHttpClient {
+    fun createHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             .readTimeout(15,TimeUnit.SECONDS)
             .connectTimeout(15,TimeUnit.SECONDS)
@@ -29,7 +29,7 @@ object NetworkModule {
     }
     @Provides
     @Singleton
-    private fun createRetrofit(okHttpClient: OkHttpClient): Retrofit {
+    fun createRetrofit(okHttpClient: OkHttpClient): Retrofit {
         val contentType = "application/json".toMediaType()
         Json {
             ignoreUnknownKeys = true
@@ -42,7 +42,7 @@ object NetworkModule {
     }
     @Provides
     @Singleton
-    private fun createUnsplashApi(retrofit: Retrofit):PhotosAPI{
+    fun createUnsplashApi(retrofit: Retrofit):PhotosAPI{
         return retrofit.create(PhotosAPI::class.java)
     }
 }

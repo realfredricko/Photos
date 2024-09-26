@@ -8,7 +8,7 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.itemKey
 import com.example.photos.photos_features.data.model.Photo
-import com.example.photos.photos_features.presentation.core.PhotosItem
+
 
 @Composable
 fun PhotosList(

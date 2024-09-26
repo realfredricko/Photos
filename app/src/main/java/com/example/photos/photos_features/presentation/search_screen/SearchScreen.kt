@@ -7,16 +7,17 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
-import com.example.photos.photos_features.presentation.home_screen.component.PhotoList
+import com.example.photos.photos_features.presentation.core.PhotosList
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchScreen(
     navController: NavController,
-    searchViewModel: SearchViewModel = viewModel()
+    searchViewModel: SearchViewModel = hiltViewModel()
 ) {
     val querySearch by searchViewModel.querySearch
     //Collects PagingData and converts it to LazyPagingItems

@@ -15,6 +15,11 @@ Photos, a stunning Android application designed to explore and discover beautifu
 - **Paging Library**: Promotes a clean separation of layers, making the app more testable and scalable.
   **Room**: Promotes a clean separation of layers, making the app more testable and scalable.
 
+## Screenshots
+  ![Home Screen](screenshots/screenshot_20240926_234841.png)
+
+  ![Search Screen](screenshots/screenshot_20240926_234747.png)
+
 ## Architecture Overview
 The project follows the principles of Clean Architecture, consisting of three main layers:
 
